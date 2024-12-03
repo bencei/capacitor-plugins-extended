@@ -13,6 +13,7 @@ export interface ConfigureOptions {
    * @since 1.0.0
    */
   group?: string;
+  suite?: string;
 }
 
 export interface GetOptions {

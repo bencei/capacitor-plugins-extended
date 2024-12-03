@@ -2,11 +2,11 @@
 import PackageDescription
 
 let package = Package(
-    name: "CapacitorPreferences",
+    name: "CapacitorPreferencesExtended",
     platforms: [.iOS(.v14)],
     products: [
         .library(
-            name: "CapacitorPreferences",
+            name: "CapacitorPreferencesExtended",
             targets: ["PreferencesPlugin"])
     ],
     dependencies: [

@@ -6,9 +6,11 @@ public struct PreferencesConfiguration {
     }
 
     let group: Group
+    let suite: String
 
-    public init(for group: Group = .named("CapacitorStorage")) {
+    public init(for suite: String = "", for group: Group = .named("CapacitorStorage")) {
         self.group = group
+        self.suite = suite
     }
 }
 
@@ -16,7 +18,11 @@ public class Preferences {
     private let configuration: PreferencesConfiguration
 
     private var defaults: UserDefaults {
-        return UserDefaults.standard
+        if configuration.suite.isEmpty {
+            return UserDefaults.standard
+        } else {
+            return UserDefaults(suiteName: configuration.suite) ?? UserDefaults.standard
+        }
     }
 
     private var prefix: String {

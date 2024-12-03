@@ -1,7 +1,7 @@
 {
-  "name": "@capacitor/preferences",
+  "name": "@capacitor/preferences-extended",
   "version": "7.0.0-alpha.0",
-  "description": "The Preferences API provides a simple key/value persistent store for lightweight data.",
+  "description": "The Extended Preferences API provides a simple key/value persistent store for lightweight data with iOS suite support.",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
@@ -13,25 +13,23 @@
     "ios/Sources",
     "ios/Tests",
     "Package.swift",
-    "CapacitorPreferences.podspec"
+    "CapacitorPreferencesExtended.podspec"
   ],
-  "author": "Ionic <hi@ionicframework.com>",
+  "author": "Danubius",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/capacitor-plugins"
-  },
-  "bugs": {
-    "url": "https://github.com/ionic-team/capacitor-plugins/issues"
+    "url": "https://github.com/bencei/capacitor-plugins-extended"
   },
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "native",
+    "fork"
   ],
   "scripts": {
     "verify": "npm run verify:ios && npm run verify:android && npm run verify:web",
-    "verify:ios": "xcodebuild build -scheme CapacitorPreferences -sdk iphonesimulator17.0 -destination 'OS=17.0,name=iPhone 15'",
+    "verify:ios": "xcodebuild build -scheme CapacitorPreferencesExtended -sdk iphonesimulator17.0 -destination 'OS=17.0,name=iPhone 15'",
     "verify:android": "cd android && ./gradlew clean build test && cd ..",
     "verify:web": "npm run build",
     "lint": "npm run eslint && npm run prettier -- --check && npm run swiftlint -- lint",
@@ -44,7 +42,7 @@
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
     "prepublishOnly": "npm run build",
-    "publish:cocoapod": "pod trunk push ./CapacitorPreferences.podspec --allow-warnings"
+    "publish:cocoapod": "pod trunk push ./CapacitorPreferencesExtended.podspec --allow-warnings"
   },
   "devDependencies": {
     "@capacitor/android": "next",
